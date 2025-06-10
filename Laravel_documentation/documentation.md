@@ -243,3 +243,50 @@ You can optionally store the SQL file in your <code> \Laravel_project_directory\
 
 - If found, and they aren't yet applied, run: <code>php artisan migrate</code>
   
+
+  
+#
+#
+#
+#
+
+# MODELS
+
+## STEP 1: MAKING MIGRATIONS
+
+ 1. Make migrations using <code> php artisan make:migration create_users_table </code>
+- This is making a table
+  2. Run the command <code>php artisan migrate </code> which runs the migrations thereby creating the tables
+   ## ❌ N/B : Once you run it you can never rerun, if you add new columns use <code> php artisan migrate: fresh </code> which drops all the tables and the data and recreate the tables without the data 
+
+
+## STEP 2: CREATING MODELS
+
+- Models are created manually by creating and naming a file as <code> i.e. User.php </code>
+- ### Rule of thumb
+
+- The file name should be in singular [Not the way it is in the migration file naming]
+- The file name should start with capital letter.  
+
+## STEP 3 : FACTORY CREATION
+
+- Factory is used to create fake data for testing purposes
+- - ### STEPS TO FOLLOW
+
+1. In the console/terminal use <code> php artisan tinker </code> to allow you to interact with your laravel application from the command line.
+
+2. Use the following commands to create "fake" entries
+
+- <code>  App\Models\User::factory()->create(); </code>
+
+- <code>  App\Models\User::factory(5)->create(); </code> // to generate 5 entries 
+
+
+- ### Rule of thumb
+- The naming of the factory should follow this convention >>> <code> UserFactory.php </code> 
+- - 1. Use uppercase letters at the beginning of each word.
+-  - 2. The name should have a trailing extension <code> .php </code>
+
+
+
+
