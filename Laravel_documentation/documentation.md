@@ -254,15 +254,14 @@ You can optionally store the SQL file in your <code> \Laravel_project_directory\
 
 ## STEP 1: MAKING MIGRATIONS
 
- 1. Make migrations using <code> php artisan make:migration create_users_table </code>
-- This is making a table
+ 1. Make migrations using <code> php artisan make:migration create_users_table </code>:  This is making a table .
   2. Run the command <code>php artisan migrate </code> which runs the migrations thereby creating the tables
    ## ❌ N/B : Once you run it you can never rerun, if you add new columns use <code> php artisan migrate: fresh </code> which drops all the tables and the data and recreate the tables without the data 
 
 
 ## STEP 2: CREATING MODELS
 
-- Models are created manually by creating and naming a file as <code> i.e. User.php </code>
+- Models are created manually using <code>php artisan make:model User.php </code> and naming a file as <code> i.e. User.php </code>
 - ### Rule of thumb
 
 - The file name should be in singular [Not the way it is in the migration file naming]
