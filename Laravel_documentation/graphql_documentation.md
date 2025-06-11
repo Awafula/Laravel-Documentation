@@ -68,7 +68,7 @@ type Mutation {
    // HTTP connection to the API
    const httpLink = createHttpLink({
      // Use an absolute URL
-     uri: "http://localhost:8000/graphql",
+     url: "http://localhost:8000/graphql",
    });
 
    // Cache implementation

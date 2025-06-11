@@ -141,13 +141,11 @@ return new class extends Migration
 
 <code> php artisan migrate:fresh </code>
 
-
-
 # How to Export a Database Using phpMyAdmin and Add it to a Laravel Project
 
 ---
 
-##  Part 1: Exporting Your Database from phpMyAdmin
+## Part 1: Exporting Your Database from phpMyAdmin
 
 ### 🔹 Steps:
 
@@ -162,39 +160,33 @@ return new class extends Migration
 
 ---
 
-##  Part 2: Adding the `.sql` File to Your Laravel Project
+## Part 2: Adding the `.sql` File to Your Laravel Project
 
 You can optionally store the SQL file in your <code> \Laravel_project_directory\the_database_directory or [the folder containing Laravel backend files]</code>
-
-
-
-
-
-
 
 # Github
 
 - Commit the new changes made to the project directory <code> [that is adding the database directory]</code> to github repository
 
-- The collaborators should now be able to pull the changes made and have an exact copy of the <code> .sql </code>  file in their local machine
+- The collaborators should now be able to pull the changes made and have an exact copy of the <code> .sql </code> file in their local machine
 
 # Are you a collaborator?
 
 - Do a <code> git pull </code> to obtain the updated project files
 
-- Create a  <code> .env </code> file inside the backend directory and copy-paste the contents of <code> .env.example </code> into the new <code>.env</code> file
+- Create a <code> .env </code> file inside the backend directory and copy-paste the contents of <code> .env.example </code> into the new <code>.env</code> file
 
-- Make proper changes to namings in the <code> DB_DATABASE= ... </code> 
+- Make proper changes to namings in the <code> DB_DATABASE= ... </code>
 
 - ## Create a database in phpMyAdmin
 
- 1. Visit http://localhost/phpmyadmin.
+1.  Visit http://localhost/phpmyadmin.
 
- 2. Click New and create a new database (e.g., nyimbo_zetu).
+2.  Click New and create a new database (e.g., nyimbo_zetu).
 
-   - Make sure the name matches DB_DATABASE in your .env file.
+- Make sure the name matches DB_DATABASE in your .env file.
 
--  ## Import the <code> .sql </code> File into the New Database
+- ## Import the <code> .sql </code> File into the New Database
 
 - After creating the database, click its name from the sidebar.
 
@@ -206,7 +198,7 @@ You can optionally store the SQL file in your <code> \Laravel_project_directory\
 
 - You’ll see a success message if the import worked correctly.
 
-- ## Confirm <code>.sql</code>  File Configuration 
+- ## Confirm <code>.sql</code> File Configuration
 - Make sure your <code> .env </code> file contains the correct values:
 
 <ol>     
@@ -230,10 +222,10 @@ You can optionally store the SQL file in your <code> \Laravel_project_directory\
 - ## 🛑 Important: Should You Run <code>php artisan migrate</code>?
 
 ## ❌ In most cases: No!
+
 - Since your <code>.sql</code> file already contains the tables and data, you don’t need to run: <code>php artisan migrate</code>
 
 - Running this may overwrite or duplicate what’s already in the <code>.sql</code> file unless migrations were explicitly tracked.
-
 
 - ## ✅ When SHOULD You Run Migrations?
 
@@ -242,22 +234,23 @@ You can optionally store the SQL file in your <code> \Laravel_project_directory\
 - Check for new migration files in the <code>database/migrations</code> folder.
 
 - If found, and they aren't yet applied, run: <code>php artisan migrate</code>
-  
 
-  
 #
+
 #
+
 #
+
 #
 
 # MODELS
 
 ## STEP 1: MAKING MIGRATIONS
 
- 1. Make migrations using <code> php artisan make:migration create_users_table </code>:  This is making a table .
-  2. Run the command <code>php artisan migrate </code> which runs the migrations thereby creating the tables
-   ## ❌ N/B : Once you run it you can never rerun, if you add new columns use <code> php artisan migrate: fresh </code> which drops all the tables and the data and recreate the tables without the data 
+1. Make migrations using <code> php artisan make:migration create_users_table </code>: This is making a table .
+2. Run the command <code>php artisan migrate </code> which runs the migrations thereby creating the tables
 
+## ❌ N/B : Once you run it you can never rerun, if you add new columns use <code> php artisan migrate: fresh </code> which drops all the tables and the data and recreate the tables without the data
 
 ## STEP 2: CREATING MODELS
 
@@ -265,7 +258,7 @@ You can optionally store the SQL file in your <code> \Laravel_project_directory\
 - ### Rule of thumb
 
 - The file name should be in singular [Not the way it is in the migration file naming]
-- The file name should start with capital letter.  
+- The file name should start with capital letter.
 
 ## STEP 3 : FACTORY CREATION
 
@@ -276,16 +269,17 @@ You can optionally store the SQL file in your <code> \Laravel_project_directory\
 
 2. Use the following commands to create "fake" entries
 
-- <code>  App\Models\User::factory()->create(); </code>
+- <code> App\Models\User::factory()->create(); </code>
 
-- <code>  App\Models\User::factory(5)->create(); </code> // to generate 5 entries 
-
+- <code> App\Models\User::factory(5)->create(); </code> // to generate 5 entries
 
 - ### Rule of thumb
-- The naming of the factory should follow this convention >>> <code> UserFactory.php </code> 
+- The naming of the factory should follow this convention >>> <code> UserFactory.php </code>
 - - 1. Use uppercase letters at the beginning of each word.
--  - 2. The name should have a trailing extension <code> .php </code>
+- - 2.  The name should have a trailing extension <code> .php </code>
 
+-
+-
+-
 
-
-
+ - - Refer to Graphql documentation...
