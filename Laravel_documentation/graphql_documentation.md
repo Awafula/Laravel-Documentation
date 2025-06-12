@@ -159,7 +159,7 @@ class CreateUserMutation{
 
 ### using Altair extension
 
-1. Run the command ` php artisan serve` to run the server locally
+1. Run the command `php artisan serve` to run the server locally
 2. The server will be running on `http://127.0.0.1:8000/`
 3. Inside the Altair window paste the url and add a trailing `/graphql/` so that the complete url is `http://127.0.0.1:8000/graphql`
 4. Write a query to test your api following this syntax:
@@ -214,37 +214,36 @@ query users{
 ```
 
 - This query returns a paginated list of users, where each user object includes their email address, first name, and last name. Along with the user data, it provides pagination metadata such as the current page number, the total number of pages available, and the overall total count of users, enabling efficient navigation through large sets of user records.
-
-
-
-
-
-
-
-
+-
+-
+-
+-
+-
+-
+-
 
 ## Form Validation in GraphQL and Laravel
 
-<p>The simplest way to leverage the built-in validation rules is to use the <code>@rules</code> directive </p>
+The simplest way to leverage the built-in validation rules is to use the `@rules` directive
 
-```
+```bash
 type Mutation {
     createUser(email: String @rules(apply: ["email"])): User
 }
 
 ```
 
-# Adding Rules
+## Adding Rules
 
-<code> @rules(apply:["required", "exists:outstaion, id"])</code>
+`@rules(apply:["required", "exists:outstaion, id"])`
 
-<p> The required parameter insinuates that data for the field has to be provided. </p>
-<p> unique - is a rule that says the field should be the only one with that particular kind of data </p>
-<p> exists - additional rule that says the field must be there. </p>
-<p> oustation here stands for the table name </p>
-<p> id is the column name </p>
+- The `required` parameter means that data for the field must be provided.
+- `unique` is a rule that says the field should be the only one with that particular kind of data.
+- `exists` is an additional rule that says the field must be present.
+- `oustation` here stands for the table name.
+- `id` is the column name.
 
-# Process for Adding Filters (e.g., `first` and `search`)
+## Process for Adding Filters (e.g., `first` and `search`)
 
 1. **Install Passport via composer.**
 
@@ -309,8 +308,8 @@ type Mutation {
    ```
 
 4. **Add Filtering (eg. search and first parameters)**
-   <li>In your vue component, set up a useQuery to execute the AUTHORS_QUERY with parameters like search and first passed as variables. This will allow the query to dynamically reflect filter changes. </li>
-   <li> Thw AUTHORS_QUERY should look like this.
+   - In your vue component, set up a useQuery to execute the AUTHORS_QUERY with parameters like search and first passed as variables. This will allow the query to dynamically reflect filter changes.
+   - The AUTHORS_QUERY should look like this:
 
    ```javascript
    import gql from "graphql-tag";
